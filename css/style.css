@@ -1,15 +1,75 @@
 
-body, html {
-    height: 100%;
+.html-body {
+    height:100%;
+    padding:0;
+    margin:0;
 }
+
+
+.navbar-brand img{
+  width: 150px;
+}  
+
+.nav{
+  z-index: 999;
+}
+
+.navbar-brand{
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5%
+}
+
+.navbar-nav{
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  position: relative;
+  top: 30px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  /* Additional styling for the main navigation */
+}
+
+nav ul li {
+  display: block; /* Or block, depending on desired layout */
+  position: relative; /* Needed for absolute positioning of the submenu */
+}
+
+.navbar ul ul {
+  display: none; /* Hide the submenu by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  background-color: #FFC2EE;
+  min-width: 300px;
+  padding: 10px
+  /* Additional styling for the submenu */
+}
+
+.navbar ul li:hover > ul {
+  display: block; /* Show the submenu on hover */
+}
+
+.navbar ul ul li {
+  display: block; /* Each submenu item should be on its own line */
+}
+
+
 
 /* The hero image */
 .hero-image {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   /* Set a specific height */
   background-image: url("../images/Homepage Image.png");
-  height: 600px;
-  width: 100%;
+  height: 700px;
+  width: auto;
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
@@ -72,23 +132,28 @@ footer {
   margin: 0 auto;
   text-align: center;
   position: relative;
+  background-color: #255ee3b2;
   z-index: 2; }
+
   .newsletter .content h2 {
   color: #ffffff;
-  margin-bottom: 50px; }
-  .newsletter .content .form-control {
+  margin-bottom: 0px; }
+
+  .newsletter .content.form-control {
   height: 50px;
   border-color: #ffffff;
   border-radius:0;
   }
-  .newsletter .content.form-control:focus {
+
+  .newsletter.content.form-control:focus {
   box-shadow: none;
   border: 2px solid #2b5c84;
   }
+
   .newsletter .content .btn {
   min-height: 50px; 
   border-radius:0;
-  background: #243c4f;
+  background: #FFC2EE;
   color: #fff;
   font-weight:600;
   }
@@ -97,8 +162,8 @@ footer {
   .imageContainer {
     width: 100%; 
     height: 100%; 
-    padding-top: 10px;
-    padding-bottom: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     background-image: url("../images/newslatter background image.png");
 }
 
@@ -182,3 +247,474 @@ body{
 .text-centered{
   text-align: center;
 }
+
+
+/* GRID */
+.row {
+  --gridgap: 2em;
+}
+.row2 {
+  --gridgap2: 0em;
+}
+.row>* {
+  margin-top: var(--gridgap);
+  margin-bottom: var(--gridgap);
+}
+.row2 + .row2 {
+  margin-top: var(--gridgap2);
+  margin-bottom: var(--gridgap2);
+}
+@media (min-width: 768px) {
+  .row {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: var(--gridgap);
+      /* place-items: center; */
+  }
+
+  /* COMMONLY USED SEMANTIC COLUMN WIDTHS */
+  .one-half {
+      grid-column: auto / span 6;
+  }
+
+  .one-third {
+      grid-column: auto / span 4;
+      
+  }
+
+  .two-thirds {
+      grid-column: auto / span 8;
+  }
+
+  .one-fourth {
+      grid-column: auto / span 3;
+  }
+
+  .three-fourths {
+      grid-column: auto / span 9;
+  }
+
+  /* 12 COLUMN CLASSES */
+  .col-1 {
+      grid-column: auto / span 1;
+  }
+
+  .col-2 {
+      grid-column: auto / span 2;
+  }
+
+  .col-3 {
+      grid-column: auto / span 3;
+  }
+
+  .col-4 {
+      grid-column: auto / span 4;
+  }
+
+  .col-5 {
+      grid-column: auto / span 5;
+  }
+
+  .col-6 {
+      grid-column: auto / span 6;
+  }
+
+  .col-7 {
+      grid-column: auto / span 7;
+  }
+
+  .col-8 {
+      grid-column: auto / span 8;
+  }
+
+  .col-9 {
+      grid-column: auto / span 9;
+  }
+
+  .col-10 {
+      grid-column: auto / span 10;
+  }
+
+  .col-11 {
+      grid-column: auto / span 11;
+  }
+
+  .col-12 {
+      grid-column: auto / span 12;
+  }
+
+  /* COMMONLY CENTERED COLUMNS */
+  .one-half.centered {
+      grid-column: 4 / span 6;
+  }
+
+  .one-third.centered {
+      grid-column: 5 / span 4;
+  }
+
+  .two-thirds.centered {
+      grid-column: 3 / span 8;
+  }
+
+  /* PUSHES */
+  .push-1 {
+      grid-column-start: 2;
+  }
+
+  .push-2 {
+      grid-column-start: 3;
+  }
+
+  .push-3 {
+      grid-column-start: 4;
+  }
+
+  .push-4 {
+      grid-column-start: 5;
+  }
+
+  .push-5 {
+      grid-column-start: 6;
+  }
+
+  .push-6 {
+      grid-column-start: 7;
+  }
+
+  .push-7 {
+      grid-column-start: 8;
+  }
+
+  .push-8 {
+      grid-column-start: 9;
+  }
+
+  .push-9 {
+      grid-column-start: 10;
+  }
+
+  .push-10 {
+      grid-column-start: 11;
+  }
+
+  .push-11 {
+      grid-column-start: 12;
+  }
+
+  /* SWAP (REVERSE) COLUMNS - WORKS ONLY w/ 2 CHILDREN  */
+  .row.swapped > *:first-child { order: 2; }
+  .row.swapped > *:last-child { order: 1; }
+}
+
+.card{
+  width: 100%;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 20px;
+  background-color: #FFC2EE;
+}
+
+.Rollingwellness-image{
+  background-image: url("../images/Rollingwellness_Presentation.jpg");
+  width: 100%;
+  height: 5000px;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  object-position: bottom;
+}
+
+.rollingwellness_heroimage{
+  background-image: url("../images/rollingwellness_heroimage.jpg");
+  height: 700px;
+  width: auto;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.rw-hero-text{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #ffc2eedd; 
+}
+
+.lhestshirt-heroimage{
+  background-image: url("../images/LHES\ T-Shirt-heroimage.jpg");
+  height: 700px;
+  width: auto;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.lhestshirt-herotext{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #ffc2eedd; 
+}
+
+.lhesshirtpresentation-image{
+  background-image: url("../images/LHES\ T-Shirt-Finalresults.jpg");
+  width: 100%;
+  height: 5000px;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-position: bottom;
+}
+
+.mauivanilla-heroimage{
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  /* Set a specific height */
+  background-image: url("../images/651a58f4d51e49055ac62af7_6F303FC3_960F_41BB_A39B_33EA25D69025_1_201_a.jpeg");
+  height: 700px;
+  width: auto;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.mauivanilla-presentation{
+  background-image: url("../images/mauivanilla_presentation.jpg");
+  width: 100%;
+  height: 5000px;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-position: bottom;
+}
+
+.gourmetgrab-heroimage{
+  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  /* Set a specific height */
+  background-image: url("../images/gourmetgrab-heroimage.jpg");
+  height: 700px;
+  width: auto;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.gourmetgrab-herotext{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #ffc2eedd; 
+}
+
+.gourmetgrab-image{
+  background-image: url("../images/gourmetgrab-presentation.jpg");
+  width: 100%;
+  height: 5000px;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-position: bottom;
+}
+
+.rating-container {
+  gap: 5px;
+  text-align: center;
+}
+
+.star {
+  cursor: pointer;
+  font-size: 3em;
+  color: #255DE3;
+}
+
+.card-title{
+  text-align: center;
+}
+
+.Avatars {
+  vertical-align: middle;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+
+.reviewername{
+  text-align: center;
+}
+
+.card-text{
+  text-align: center;
+}
+
+
+.testmonials-heroimage{
+  background-image: url("../images/AdobeStock_1211400345_Preview.jpeg");
+  height: 700px;
+  width: auto;
+
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.testimonials-herotext{
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background-color: #ffc2eedd; 
+}
+
+.card{
+  width: auto; 
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px; 
+  background-color: #FFC2EE;
+}
+
+.cardT{
+  width: auto; 
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px; 
+  background-color: #FFC2EE;
+}
+
+.review-background{
+  background-color:#FFC2EE;
+  padding-top: 40px;
+  padding-bottom: 4px;
+  width:auto;
+}
+
+.cardTT{
+  width: auto; 
+  padding: 20px;
+  margin: 20px;
+  border-radius: 20px; 
+  background-color: #f2f2f2;
+}
+
+.about-backgroundcolor{
+  background-color: #FFC2EE;
+  padding-bottom: 48px;
+}
+
+.about-cardbody{
+  width: 100%; 
+  padding: 50px;
+  margin: 0 auto;
+  border-radius: 20px; 
+  background-color: #ffffff;
+}
+
+.about-container{
+  display: flex;
+  gap: 20;
+  padding: 30px;
+  width: 65%;
+}
+
+.aboutA{ /*artist image*/
+  position: flex;
+  height: 450px;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.cardA{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  padding-left: 135px;
+}
+
+.card-titleA{
+  text-align: center;
+}
+
+.card-textA{
+  text-align: center;
+}
+
+.artistpfp{
+    float:right;
+    clear:right;
+    height: 600px;
+    width: 100%;
+    border-radius: 20px;
+    margin: 25px 50px;
+}
+
+.about-text{
+  display: inline;
+  text-align: right;
+  font-size: 40px;
+  text-align: center;
+}
+
+.artistpfpwork{
+    float:left;
+    clear:left;
+    height: 650px;
+    width: 100%;
+    border-radius: 20px;
+    margin: 25px 50px;
+}
+
+.about-text-work{
+  display: inline;
+  text-align: left;
+  font-size: 37px;
+  text-align: center;
+}
+
+#page-container {
+  position: relative;
+  height: 300px;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
